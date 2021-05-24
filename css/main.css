@@ -49,6 +49,7 @@ header .container .country .flag {
   display: block;
   width: 100px;
   height: 4px;
+  margin-top: 3px;
 }
 header .container .country .flag::before {
   background: #06338d;
