@@ -1,0 +1,245 @@
+:root 
+    --color-background: #181818
+    --color-text: rgba(255, 255, 255, 0.7)
+    --color-white-transparent: rgba(255, 255, 255, 0.7)
+    --color-primary: #536dfe
+    --color-secondary: #fe5353
+    --color-contrast-primary: #fff
+    --color-contrast-secondary: #000
+* 
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body 
+    background: var(--color-background)
+    color: var(--color-text)
+    font-family: Montserrat, arial
+    font-size: 16px
+
+    display: flex
+    flex-direction: column
+    row-gap: 5rem 
+
+// Defaults styles 
+
+
+.container 
+    max-width: 90%
+    width: 1000px 
+    margin: auto
+
+img 
+    // width: 100px
+
+h1
+    margin: 0
+// Coding
+header 
+    .container 
+        display: flex
+        justify-content: space-between
+        font-size: 1.1875rem
+        padding: 1.25rem 0
+        .country
+            font-weight: 400
+            .flag
+                background: var(--color-white-transparent)
+                position: relative
+                display: block
+                width: 100px
+                height: 4px
+                &::before
+                    background: #06338d
+                    content: ''
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: calc( 100% / 3 )
+                    height: 4px
+                &::after
+                    background: #c81025
+                    content: ''
+                    position: absolute
+                    top: 0
+                    right: 0
+                    width: calc( 100% / 3 )
+                    height: 4px
+        .navigation
+            a
+                color: var(--color-text)
+                font-size: 1.1875rem
+                text-decoration: none
+                &::after
+                    background: var(--color-primary)
+                    content: ''
+                    display: block
+                    width: 100%
+                    height: 3px
+                    transition: transform .3s ease
+                    transform: scaleX(0)
+                    transform-origin: right
+                &:hover
+                    &::after
+                        background: var(--color-white-transparent)
+                        transform: scaleX(1)
+                        transform-origin: left
+
+.first-look
+    .container
+        display: flex
+        justify-content: space-between
+        span
+            color: var(--color-primary)
+            font-weight: bold
+        .text-container
+            display: flex
+            flex-direction: column
+            row-gap: 0.3125rem 
+            width: 65%
+            .greeting
+                font-weight: bold
+                font-size: 5rem
+            .name
+                font-weight: bold
+                font-size: 2.5rem
+            .profession
+                font-size: 2rem
+                font-weight: lighter
+                margin-bottom: 0.3125em
+            .description 
+                font-size: 1.25rem
+                font-weight: 300
+                line-height: 1.4
+                span
+                    font-weight: 200
+                    color: var(--color-secondary)
+        .files
+            width: 40%
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            row-gap: 0.9375rem
+            .btn
+                background: var(--color-contrast-primary)
+                color: var(--color-contrast-secondary)
+                font-size: 1rem
+                padding: 1.25rem 1.5625rem
+                border-radius: 2.8125rem
+                filter: drop-shadow(0rem 0rem rgba(0 0 0 / .1))
+                filter: brightness(.9)
+                cursor: pointer
+                text-decoration: none
+                &:hover
+                    filter: brightness(1)
+                &:active
+                    transform: scale(1.1)
+            .download
+                background: var(--color-primary)
+                color: var(--color-contrast-primary)
+                
+.technologies-container
+    margin-bottom: 1.875rem
+    .title
+        font-size: 1.25rem
+        font-weight: 300
+        margin-bottom: 0.625rem
+    .technologies
+        display: flex
+        flex-flow: row wrap
+        .technology
+            width: 5rem
+            margin: 0.625rem 1.25rem 0 0
+            transition: transform .05s ease
+            &:hover
+                transform: scale(1.2)
+            &:hover::after
+                visibility: visible
+            &::after
+                visibility: hidden
+                content: attr(data-name)
+                display: flex
+                justify-content: center
+                font-size: 0.875rem
+                font-weight: 400
+                             
+
+
+@media screen and ( max-width: 1030px )
+    html
+        font-size: 15px
+        row-gap: 2.5rem
+    .first-look
+        .container
+            flex-direction: column
+            .text-container
+                width: 100%
+                margin-bottom: 1.5625rem
+                text-align: left
+            .files
+                align-items: flex-start
+                width: 100%
+                .btn
+                    width: 21.875rem
+
+@media screen and ( max-width: 790px )
+    html
+        font-size: 14px
+    .first-look
+        .container
+            .text-container
+                text-align: center
+            .files
+                align-items: center
+    .technologies-container
+        row-gap: 3px
+        .container
+            .technologies
+                justify-content: center
+                .technology
+                    width: 4.6875rem
+@media screen and ( max-width: 550px )
+    .technologies-container
+        .container
+            .technologies
+                .technology
+                    &:not(:last-child)
+                        margin-bottom: 0.625rem
+                    &::after
+                        font-size: 0.625rem
+@media screen and ( max-width: 500px )
+    .first-look
+        .container
+            .text-container
+                .greeting
+                    font-size: 3.125rem
+                .name
+                    font-size: 1.5625rem
+                .profession
+                    font-size: 25px    
+                .description
+                    line-height: 1.4
+                    font-size: 1.0625rem  
+    .technologies-container
+        .technologies
+            .technology
+                &::after
+                    visibility: visible   
+@media screen and ( max-width: 340px )
+    .first-look
+        .container
+            .text-container
+                .greeting
+                    font-size: 2.5rem
+                .name
+                    font-size: 1.25rem
+                .profession
+                    font-size: 1.25rem    
+                .description
+                    font-size: 15px  
+            .files
+                .btn
+                    width: 75%   
+
+        
