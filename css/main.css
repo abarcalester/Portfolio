@@ -135,9 +135,9 @@ header .container .darkmode span {
   align-items: center;
   justify-content: center;
   color: var(--color-contrast-secondary);
-  width: 30px;
+  width: 29px;
   height: 25px;
-  font-size: 18px;
+  font-size: 14px;
 }
 header .container .darkmode::after {
   background: #d6d3d3;
