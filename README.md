@@ -1,2 +1,2 @@
 # Portfolio
-Personal resume to preview o download it.
+Personal resume to preview or download it.
